@@ -18,13 +18,13 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val cardData = intent.getParcelableExtra("data")?: cardList[0]
+        val cardData = intent.getParcelableExtra("data") ?: cardList[0]
 
-        val text =
-            "Card Number: " + cardData.cardNumber +
-                    "\nDate: " + cardData.cardDate +
-                    "\nBalance: $" + decimalFormat.format(cardData.cardValue) +
-                    "\nCard Type" + cardData.cardType
+        val text ="Owner: " + cardData.owner +
+                "\nCard Number: " + cardData.cardNumber +
+                "\nDate: " + cardData.cardDate +
+                "\nBalance: $" + decimalFormat.format(cardData.cardValue) +
+                "\nCard Type" + cardData.cardType
         binding.text1.text = text
     }
 }

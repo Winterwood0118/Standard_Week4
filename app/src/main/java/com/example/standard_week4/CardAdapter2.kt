@@ -26,6 +26,7 @@ class CardAdapter2(private val onClick: (Card) -> Unit) :
         fun bind(card: Card) {
             with(binding) {
                 currentCard = card
+                nameTextView.text = card.owner
                 numberTextView.text = card.cardNumber
                 dateTextView.text = card.cardDate
                 val value = "$" + decimalFormat.format(card.cardValue)
