@@ -41,7 +41,7 @@ class CardAdapter(private val onClick: (Card) -> Unit) :
         private val binding: ItemCardSkyBinding,
         val onClick: (Card) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        private val currentCard: Card? = null
+        private var currentCard: Card? = null
 
         init {
             itemView.setOnClickListener {
@@ -53,6 +53,7 @@ class CardAdapter(private val onClick: (Card) -> Unit) :
 
         fun bind(card: Card) {
             with(binding) {
+                currentCard = card
                 numberTextView.text = card.cardNumber
                 dateTextView.text = card.cardDate
                 val value = "$" + decimalFormat.format(card.cardValue)
@@ -66,7 +67,7 @@ class CardAdapter(private val onClick: (Card) -> Unit) :
         private val binding: ItemCardOrangeBinding,
         val onClick: (Card) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
-        private val currentCard: Card? = null
+        private var currentCard: Card? = null
 
         init {
             itemView.setOnClickListener {
@@ -78,6 +79,7 @@ class CardAdapter(private val onClick: (Card) -> Unit) :
 
         fun bind(card: Card) {
             with(binding) {
+                currentCard = card
                 numberTextView.text = card.cardNumber
                 dateTextView.text = card.cardDate
                 val value = "$" + decimalFormat.format(card.cardValue)

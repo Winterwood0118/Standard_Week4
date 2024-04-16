@@ -24,7 +24,7 @@ class DetailActivity : AppCompatActivity() {
                 "\nCard Number: " + cardData.cardNumber +
                 "\nDate: " + cardData.cardDate +
                 "\nBalance: $" + decimalFormat.format(cardData.cardValue) +
-                "\nCard Type" + cardData.cardType
+                "\nCard Type: " + cardData.cardType
         binding.text1.text = text
     }
 }

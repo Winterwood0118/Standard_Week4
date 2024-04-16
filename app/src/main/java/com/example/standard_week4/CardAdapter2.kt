@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.standard_week4.databinding.ItemCardBlueBinding
 
 class CardAdapter2(private val onClick: (Card) -> Unit) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<CardAdapter2.CardHolder>() {
     var cardList = listOf<Card>()
 
     inner class CardHolder(
@@ -40,7 +40,7 @@ class CardAdapter2(private val onClick: (Card) -> Unit) :
         return cardList[position].backgroundType
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardAdapter2.CardHolder {
         return when (viewType) {
             MULTI_TYPE1 -> {
                 val view = LayoutInflater.from(parent.context)
@@ -66,7 +66,7 @@ class CardAdapter2(private val onClick: (Card) -> Unit) :
         return cardList.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as CardHolder).bind(cardList[position])
+    override fun onBindViewHolder(holder: CardAdapter2.CardHolder, position: Int) {
+        holder.bind(cardList[position])
     }
 }
