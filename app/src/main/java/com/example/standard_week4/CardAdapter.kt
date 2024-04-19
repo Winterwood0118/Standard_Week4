@@ -60,7 +60,6 @@ class CardAdapter(private val onClick: (Card) -> Unit) :
                 valueTextView.text = value
             }
         }
-
     }
 
     inner class CardHolder3(
