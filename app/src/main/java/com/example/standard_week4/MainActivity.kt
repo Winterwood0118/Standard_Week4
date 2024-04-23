@@ -5,21 +5,26 @@ import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.example.standard_week4.DetailActivity.Companion.EXTRA_ID
 import com.example.standard_week4.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val cardAdapter by lazy {
         CardAdapter2{card ->
             cardOnClick(card)
         }
+    }
+    private val cardViewModel by viewModels<CardViewModel> {
+        CardViewModel.CardViewModelFactory()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,10 +36,9 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val cardList = cardList
         val gapDeco = VerticalSpaceItemDecoration(80)
-        cardAdapter.cardList = cardList
+
+        cardAdapter.cardList = cardViewModel.cardLiveData
 
         binding.cardRecyclerView.apply {
             adapter = cardAdapter
@@ -42,14 +46,12 @@ class MainActivity : AppCompatActivity() {
             addItemDecoration(gapDeco)
         }
 
-
-
-
     }
 
     private fun cardOnClick(card: Card){
         val intent = Intent(this@MainActivity, DetailActivity::class.java)
-        intent.putExtra("data", card)
+        //intent.putExtra(EXTRA_CARD, card)
+        intent.putExtra(EXTRA_ID, card.id)
         startActivity(intent)
     }
 
