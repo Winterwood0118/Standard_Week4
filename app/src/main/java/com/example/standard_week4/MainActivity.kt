@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val cardAdapter by lazy {
-        CardAdapter2{card ->
+        CardAdapter{ card ->
             cardOnClick(card)
         }
     }

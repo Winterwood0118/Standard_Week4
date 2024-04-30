@@ -10,7 +10,7 @@ data class Card(
     val cardDate: String,
     val cardType: String,
     val cardValue: Double,
-    val backgroundType: Int,
+    val mode: MultiMode,
     val id: Long
 ): Parcelable
 

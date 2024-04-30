@@ -10,7 +10,7 @@ val cardList = listOf(
         "12/24",
         "A Debit Card",
         1234.11,
-        MULTI_TYPE1,
+        MultiMode.BLUE,
         0
     ),
     Card("Jim Rayner",
@@ -18,14 +18,14 @@ val cardList = listOf(
         "02/31",
         "A Debit Card",
         657.0,
-        MULTI_TYPE2,
+        MultiMode.SKY_BLUE,
         1
     ),    Card("Tychus Findlay",
         "0000  0000  0000  0000",
         "11/13",
         "A Debit Card",
         22224.11,
-        MULTI_TYPE3,
+        MultiMode.ORANGE,
         2
     ),
 )

@@ -1,5 +1,7 @@
 package com.example.standard_week4
 
-const val MULTI_TYPE1 = 1
-const val MULTI_TYPE2 = 2
-const val MULTI_TYPE3 = 3
+enum class MultiMode(val viewType: Int){
+    BLUE(1),
+    SKY_BLUE(2),
+    ORANGE(3)
+}
