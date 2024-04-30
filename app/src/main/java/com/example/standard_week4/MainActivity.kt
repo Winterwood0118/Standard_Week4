@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.standard_week4.DetailActivity.Companion.EXTRA_ID
 import com.example.standard_week4.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
 
